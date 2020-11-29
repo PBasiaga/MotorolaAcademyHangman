@@ -92,6 +92,9 @@ namespace HangmanMotorola.view
                               "Please Enter your name and you might join the leaderboard!", password, hint, guessingTries, seconds, lifepoints);
         }
         
-        
+        public void ShowGameOverScreen(string password)
+        {
+            Console.WriteLine("You lost! Password was: {0}. Better luck next time! \n", password);
+        }
     }
 }
