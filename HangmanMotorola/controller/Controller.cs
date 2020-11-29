@@ -18,9 +18,17 @@ namespace HangmanMotorola.controller
         
         public void Start()
         {
-        
-        
-        
+            PlayGame();
+
+        }
+
+        private void PlayGame()
+        {
+            InitializeGame();
+            while (!game.IsGameFinished)
+            {
+                
+            }
         }
         
         private void InitializeGame()
