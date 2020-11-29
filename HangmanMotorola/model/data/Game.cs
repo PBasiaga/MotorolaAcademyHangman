@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using HangmanMotorola.model.logic;
 
 namespace HangmanMotorola.model.data
 {
     public class Game
     {
 
+        private FileReaderWriter fileReader = new FileReaderWriter();
+        
         private bool isGameFinished;
         private string password;
         private string hint;
@@ -56,6 +59,14 @@ namespace HangmanMotorola.model.data
             get; set;
         }
         
+        private void SetPasswordAndHint()
+        {
+            string tempPassword;
+            string tempHint;
+            fileReader.GetRandomPasswordAndHint(out tempPassword, out tempHint);
+            Password = tempPassword;
+            Hint = tempHint;
+        }
         
     }
 }
