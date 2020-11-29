@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using HangmanMotorola.model.logic;
 
 namespace HangmanMotorola.view
@@ -125,6 +126,19 @@ namespace HangmanMotorola.view
                 case 1:
                     Console.WriteLine(hangmanInParts[4]);
                     break;
+            }
+        }
+        
+        public void ShowUsedLetters(List<Char> letters)
+        {
+            if (letters.Count > 0)
+            {
+                Console.Write("Letters guessed incorrectly: ");
+                foreach (var letter in letters)
+                {
+                    Console.Write(letter + " ");
+                }
+                Console.WriteLine("\n");
             }
         }
     }
