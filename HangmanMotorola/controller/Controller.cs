@@ -116,5 +116,18 @@ namespace HangmanMotorola.controller
             if (playAgain)
                 PlayGame();
         }
+        
+        private void CheckGameOutcome()
+        {
+            if (player.LifePoints > 0)
+            {
+                
+                view.ShowYouWinScreen(game.Password, game.Hint, player.GuessingTries, player.LifePoints, player.GuessingTime);
+            }
+            else
+            {
+                view.ShowGameOverScreen(game.Password);
+            }
+        }
     }
 }
