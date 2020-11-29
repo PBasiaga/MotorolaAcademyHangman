@@ -28,6 +28,7 @@ namespace HangmanMotorola.controller
             InitializeGame();
             while (!game.IsGameFinished)
             {
+                view.ShowHangmanArt(player.LifePoints);
                 view.ShowBoard(game.Board);
                 view.ShowRemainingLifePoints(player.LifePoints);
                 game.Answer = view.AskForInput().ToUpper();
