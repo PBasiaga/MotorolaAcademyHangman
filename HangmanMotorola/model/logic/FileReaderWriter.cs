@@ -55,5 +55,27 @@ namespace HangmanMotorola.model.logic
             textWriter.Close();
 
         }
+        
+        public List<PlayerScore> GetHighScores()
+        {
+            List<PlayerScore> playersScores = new List<PlayerScore>();
+            PlayerScore playerScore;
+
+            string[] allLines = File.ReadAllLines(highscoresFile);
+            
+            foreach (string line in allLines)
+            {
+                string[] playerData = line.Split('|');
+                playerScore = new PlayerScore();
+                playerScore.Name = playerData[0];
+                playerScore.DateOfPlay = playerData[1];
+                playerScore.GuessingTime = playerData[2];
+                playerScore.GuessingTries = playerData[3];
+                playerScore.LifePoints = playerData[4];
+                playerScore.GuessedPassword = playerData[5];
+                playersScores.Add(playerScore);
+            }
+            return playersScores;
+        }
     }
 }
