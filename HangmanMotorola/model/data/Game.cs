@@ -22,6 +22,8 @@ namespace HangmanMotorola.model.data
             IsGameFinished = false;
             GuessedLetters = new List<char>();
             LettersNotInWord = new List<char>();
+            SetPasswordAndHint();
+            SetBoard();
         }
 
         public bool IsGameFinished
