@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using HangmanMotorola.model.data;
 using HangmanMotorola.model.logic;
 
 namespace HangmanMotorola.view
@@ -144,6 +145,17 @@ namespace HangmanMotorola.view
                     Console.Write(letter + " ");
                 }
                 Console.WriteLine("\n");
+            }
+        }
+        
+        public void ShowHighScores(List<PlayerScore> highScores)
+        {
+            Console.WriteLine("\nHIGHSCORES:\n");
+            for (int i = 0; i < highScores.Count; i++)
+            {
+                Console.WriteLine("{0}. Name: {1} | Date Of Play: {2} | Guessing Time: {3} seconds | Tries: {4} | Lifepoints Left: {5} | Guessed Password: {6}"
+                    ,i+1, highScores[i].Name, highScores[i].DateOfPlay, highScores[i].GuessingTime
+                    , highScores[i].GuessingTries, highScores[i].LifePoints, highScores[i].GuessedPassword);
             }
         }
     }
