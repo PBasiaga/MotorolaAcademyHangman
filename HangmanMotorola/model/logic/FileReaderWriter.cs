@@ -10,7 +10,6 @@ namespace HangmanMotorola.model.logic
         
         private const string passwordsAndHintsFile =
             "D:/Programowanie/backEnd/C# - programowanie/MotorolaAcademyTask/HangmanMotorola/HangmanMotorola/resources/countries_and_capitals.txt";
-        
         private const string hangmanArtFile = 
             "D:/Programowanie/backEnd/C# - programowanie/MotorolaAcademyTask/HangmanMotorola/HangmanMotorola/resources/hangman_art.txt";
         private const string highscoresFile = 
@@ -28,8 +27,25 @@ namespace HangmanMotorola.model.logic
 
             string[] passwordAndHint = randomLine.Split('|');
 
-            password = passwordAndHint[1].Trim().ToUpper();
             hint = passwordAndHint[0].Trim().ToUpper();
+            
+            password = passwordAndHint[1].Trim().ToUpper();
+
+            bool hasWhitespace = false;
+            
+            for (int i = 0; i < password.Length; i++)
+            {
+                if (password[i].Equals(' '))
+                {
+                    hasWhitespace = true;
+                }
+            }
+
+            if (hasWhitespace)
+            {
+                password = password.Replace(" ", "");
+            }
+            
         }
         
         public string[] GetHangmanArt()
