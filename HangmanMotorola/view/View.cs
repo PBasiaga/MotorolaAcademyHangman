@@ -102,6 +102,7 @@ namespace HangmanMotorola.view
         
         public void ShowGameOverScreen(string password)
         {
+            Console.WriteLine(hangmanInParts[5] + "\n");
             Console.WriteLine("You lost! Password was: {0}. Better luck next time! \n", password);
         }
         
