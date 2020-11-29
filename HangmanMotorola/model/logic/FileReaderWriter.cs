@@ -11,6 +11,8 @@ namespace HangmanMotorola.model.logic
         
         private const string hangmanArtFile = 
             "D:/Programowanie/backEnd/C# - programowanie/MotorolaAcademyTask/HangmanMotorola/HangmanMotorola/resources/hangman_art.txt";
+        private const string highscoresFile = 
+            "D:/Programowanie/backEnd/C# - programowanie/MotorolaAcademyTask/HangmanMotorola/HangmanMotorola/resources/highscores.txt";
         
         private Random random = new Random();
         
