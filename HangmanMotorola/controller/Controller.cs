@@ -160,5 +160,10 @@ namespace HangmanMotorola.controller
             score.DateOfPlay = DateTime.Today.ToString("MM/dd/yyyy");
             return score;
         }
+        
+        private void SortHighScores()
+        {
+            playerScores.Sort(((score1, score2) => Int32.Parse(score1.GuessingTime).CompareTo(Int32.Parse(score2.GuessingTime))));
+        }
     }
 }
