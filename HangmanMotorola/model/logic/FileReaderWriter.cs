@@ -7,7 +7,7 @@ namespace HangmanMotorola.model.logic
 {
     public class FileReaderWriter
     {
-        
+        // PATHS NEED TO BE CHANGED TO YOUR CORESPONDING FOLDERS
         private const string passwordsAndHintsFile =
             "D:/Programowanie/backEnd/C# - programowanie/MotorolaAcademyTask/HangmanMotorola/HangmanMotorola/resources/countries_and_capitals.txt";
         private const string hangmanArtFile = 
