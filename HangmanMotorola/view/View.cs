@@ -69,5 +69,19 @@ namespace HangmanMotorola.view
         {
             Console.WriteLine("You have {0} lifepoint(s) left. \n", lifePoints);
         }
+        
+        
+        public bool AskIfPlayAgain()
+        {
+            Console.WriteLine("Do you want to play again? Press Y for yes, or any other key for no. \n");
+            string answer = Console.ReadLine();
+            
+            if (String.IsNullOrEmpty(answer))
+            {
+                answer = "no";
+            }
+
+            return (answer.Equals("y") || answer.Equals("Y"));
+        }
     }
 }

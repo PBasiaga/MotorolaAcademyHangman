@@ -36,7 +36,7 @@ namespace HangmanMotorola.controller
                 CheckIfGameOver();
             }
             //check outcome
-            //ask if play again
+            CheckIfPlayAgain(view.AskIfPlayAgain());
         }
         
         private void InitializeGame()
@@ -109,6 +109,12 @@ namespace HangmanMotorola.controller
             {
                 game.IsGameFinished = true;
             }
+        }
+        
+        private void CheckIfPlayAgain(bool playAgain)
+        {
+            if (playAgain)
+                PlayGame();
         }
     }
 }
