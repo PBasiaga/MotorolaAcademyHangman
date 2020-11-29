@@ -28,8 +28,15 @@ namespace HangmanMotorola.controller
             InitializeGame();
             while (!game.IsGameFinished)
             {
-                
+                view.ShowBoard(game.Board);
+                view.ShowRemainingLifePoints(player.LifePoints);
+                game.Answer = view.AskForInput().ToUpper();
+                player.GuessingTries++;
+                //check answer
+                //check if gameover
             }
+            //check outcome
+            //ask if play again
         }
         
         private void InitializeGame()
