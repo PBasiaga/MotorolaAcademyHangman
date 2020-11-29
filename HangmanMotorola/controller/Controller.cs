@@ -37,6 +37,7 @@ namespace HangmanMotorola.controller
                 view.ShowUsedLetters(game.LettersNotInWord);
                 view.ShowBoard(game.Board);
                 view.ShowRemainingLifePoints(player.LifePoints);
+                GiveHint();
                 game.Answer = view.AskForInput().ToUpper();
                 player.GuessingTries++;
                 CheckAnswer();
@@ -137,6 +138,12 @@ namespace HangmanMotorola.controller
             {
                 view.ShowGameOverScreen(game.Password);
             }
+        }
+        
+        private void GiveHint()
+        {
+            if (player.LifePoints <= 2)
+                view.ShowHint(game.Hint);
         }
     }
 }
