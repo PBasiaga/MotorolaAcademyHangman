@@ -1,9 +1,17 @@
 ﻿using System;
+using HangmanMotorola.model.logic;
 
 namespace HangmanMotorola.view
 {
     public class View
     {
+        FileReaderWriter fileReader = new FileReaderWriter();
+        string[] hangmanInParts;
+
+        public View()
+        {
+            hangmanInParts = fileReader.GetHangmanArt();
+        }
         
         public void ShowStartingScreen()
         {
