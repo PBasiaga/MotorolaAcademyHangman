@@ -79,6 +79,11 @@ namespace HangmanMotorola.view
             Console.WriteLine("You have {0} lifepoint(s) left. \n", lifePoints);
         }
         
+        public void ShowHint(string hint)
+        {
+            Console.WriteLine("HINT: Capital of {0} \n", hint);
+        }
+        
         
         public bool AskIfPlayAgain()
         {
