@@ -50,6 +50,11 @@ namespace HangmanMotorola.view
             Console.WriteLine("You've already tried this letter. \n");
         }
         
+        public void ShowWrongPasswordInfo()
+        {
+            Console.WriteLine("This is not the correct password. \n");
+        }
+        
         public void ShowWrongLetterInfo()
         {
             Console.WriteLine("Wrong letter. \n");

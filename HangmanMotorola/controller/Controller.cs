@@ -70,7 +70,7 @@ namespace HangmanMotorola.controller
             else
             {
                 player.LifePoints -= 2;
-                //view.ShowWrongPasswordInfo();
+                view.ShowWrongPasswordInfo();
             }
         }
         
