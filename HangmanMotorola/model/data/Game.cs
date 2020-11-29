@@ -68,5 +68,25 @@ namespace HangmanMotorola.model.data
             Hint = tempHint;
         }
         
+        private void SetBoard()
+        {
+            Board = new char[Password.Length];
+            for (int i = 0; i < Password.Length; i++)
+            {
+                Board[i] = '_';
+            }
+        }
+        
+        public void PutLettersInBoard(char letter)
+        {
+            for (int i = 0; i < Password.Length; i++)
+            {
+                if (letter.Equals(Password[i]))
+                {
+                    Board[i] = letter;
+                }
+            }
+        }
+        
     }
 }
