@@ -45,7 +45,10 @@ namespace HangmanMotorola.model.logic
         {
             if (highScores.Count > 10)
             {
-                highScores.RemoveAt(10);
+                for (int i = (highScores.Count - 1); i >= 10; i--)
+                {
+                    highScores.RemoveAt(i);
+                }
             }
             TextWriter textWriter = new StreamWriter(highscoresFile);
             foreach (var score in highScores)
