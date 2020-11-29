@@ -104,5 +104,27 @@ namespace HangmanMotorola.view
         {
             Console.WriteLine("You lost! Password was: {0}. Better luck next time! \n", password);
         }
+        
+        public void ShowHangmanArt(int lifepoints)
+        {
+            switch (lifepoints)
+            {
+                case 5:
+                    Console.WriteLine(hangmanInParts[0]);
+                    break;
+                case 4:
+                    Console.WriteLine(hangmanInParts[1]);
+                    break;
+                case 3:
+                    Console.WriteLine(hangmanInParts[2]);
+                    break;
+                case 2:
+                    Console.WriteLine(hangmanInParts[3]);
+                    break;
+                case 1:
+                    Console.WriteLine(hangmanInParts[4]);
+                    break;
+            }
+        }
     }
 }
