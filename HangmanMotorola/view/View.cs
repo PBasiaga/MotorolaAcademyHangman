@@ -158,5 +158,16 @@ namespace HangmanMotorola.view
                     , highScores[i].GuessingTries, highScores[i].LifePoints, highScores[i].GuessedPassword);
             }
         }
+        
+        public string GetPlayerName()
+        {
+            string name = Console.ReadLine();
+
+            if (String.IsNullOrEmpty(name))
+            {
+                name = "Anonymous";
+            }
+            return name;
+        }
     }
 }
