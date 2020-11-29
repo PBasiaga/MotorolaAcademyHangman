@@ -18,6 +18,7 @@ namespace HangmanMotorola.controller
         
         public void Start()
         {
+            view.ShowStartingScreen();
             PlayGame();
 
         }
