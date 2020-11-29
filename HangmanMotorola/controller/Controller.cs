@@ -1,4 +1,6 @@
-﻿using System.Linq;
+﻿using System;
+using System.Diagnostics;
+using System.Linq;
 using HangmanMotorola.model.data;
 using HangmanMotorola.view;
 
@@ -9,11 +11,13 @@ namespace HangmanMotorola.controller
         private View view;
         private Player player;
         private Game game;
+        private Stopwatch stopwatch;
 
 
         public Controller()
         {
             view = new View();
+            stopwatch = new Stopwatch();
         }
         
         public void Start()
@@ -26,6 +30,7 @@ namespace HangmanMotorola.controller
         private void PlayGame()
         {
             InitializeGame();
+            stopwatch.Start();
             while (!game.IsGameFinished)
             {
                 view.ShowHangmanArt(player.LifePoints);
@@ -37,6 +42,7 @@ namespace HangmanMotorola.controller
                 CheckAnswer();
                 CheckIfGameOver();
             }
+            stopwatch.Stop();
             CheckGameOutcome();
             CheckIfPlayAgain(view.AskIfPlayAgain());
         }
@@ -123,7 +129,8 @@ namespace HangmanMotorola.controller
         {
             if (player.LifePoints > 0)
             {
-                
+                TimeSpan timeSpan = stopwatch.Elapsed;
+                player.GuessingTime = timeSpan.Seconds;
                 view.ShowYouWinScreen(game.Password, game.Hint, player.GuessingTries, player.LifePoints, player.GuessingTime);
             }
             else
