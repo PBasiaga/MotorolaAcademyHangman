@@ -33,7 +33,7 @@ namespace HangmanMotorola.controller
                 game.Answer = view.AskForInput().ToUpper();
                 player.GuessingTries++;
                 CheckAnswer();
-                //check if gameover
+                CheckIfGameOver();
             }
             //check outcome
             //ask if play again
@@ -100,6 +100,14 @@ namespace HangmanMotorola.controller
             else
             {
                 view.ShowMustBeALetterInfo();
+            }
+        }
+        
+        private void CheckIfGameOver()
+        {
+            if (player.LifePoints <= 0 || !game.Board.Contains('_'))
+            {
+                game.IsGameFinished = true;
             }
         }
     }
