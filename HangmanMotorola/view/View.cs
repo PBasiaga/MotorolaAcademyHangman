@@ -34,5 +34,35 @@ namespace HangmanMotorola.view
             Console.WriteLine("Enter a letter or word: \n");
             return Console.ReadLine();
         }
+        
+        public void ShowEmptyAnswerInfo()
+        {
+            Console.WriteLine("You have to enter at least one letter! \n");
+        }
+        
+        public void ShowMustBeALetterInfo()
+        {
+            Console.WriteLine("Answer must be a letter! \n");
+        }
+        
+        public void ShowAlreadyGuessedInfo()
+        {
+            Console.WriteLine("You've already tried this letter. \n");
+        }
+        
+        public void ShowWrongLetterInfo()
+        {
+            Console.WriteLine("Wrong letter. \n");
+        }
+        
+        public void ShowCorrectLetterInfo()
+        {
+            Console.WriteLine("Correct! \n");
+        }
+        
+        public void ShowRemainingLifePoints(int lifePoints)
+        {
+            Console.WriteLine("You have {0} lifepoint(s) left. \n", lifePoints);
+        }
     }
 }
