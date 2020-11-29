@@ -27,5 +27,14 @@ namespace HangmanMotorola.model.logic
             password = passwordAndHint[1].Trim().ToUpper();
             hint = passwordAndHint[0].Trim().ToUpper();
         }
+        
+        public string[] GetHangmanArt()
+        {
+            string allHangmanParts = File.ReadAllText(hangmanArtFile);
+
+            string[] hangmanInParts = allHangmanParts.Split(',');
+
+            return hangmanInParts;
+        }
     }
 }
