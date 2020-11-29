@@ -2,6 +2,9 @@
 {
     public class Controller
     {
-        
+        public void Start()
+        {
+            
+        }
     }
 }

@@ -1,4 +1,4 @@
-﻿using System;
+﻿using HangmanMotorola.controller;
 
 namespace HangmanMotorola
 {
@@ -6,7 +6,8 @@ namespace HangmanMotorola
     {
         static void Main(string[] args)
         {
-            
+            Controller controller = new Controller();
+            controller.Start();
         }
     }
 }
