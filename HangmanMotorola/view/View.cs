@@ -28,5 +28,11 @@ namespace HangmanMotorola.view
             }
             Console.WriteLine("\n");
         }
+        
+        public string AskForInput()
+        {
+            Console.WriteLine("Enter a letter or word: \n");
+            return Console.ReadLine();
+        }
     }
 }
