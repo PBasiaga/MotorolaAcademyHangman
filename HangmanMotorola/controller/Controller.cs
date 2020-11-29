@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using HangmanMotorola.model.data;
+using HangmanMotorola.model.logic;
 using HangmanMotorola.view;
 
 namespace HangmanMotorola.controller
@@ -14,12 +15,14 @@ namespace HangmanMotorola.controller
         private Game game;
         private List<PlayerScore> playerScores;
         private Stopwatch stopwatch;
+        private FileReaderWriter fileReaderWriter;
 
 
         public Controller()
         {
             view = new View();
             stopwatch = new Stopwatch();
+            fileReaderWriter = new FileReaderWriter();
         }
         
         public void Start()
@@ -135,6 +138,7 @@ namespace HangmanMotorola.controller
                 TimeSpan timeSpan = stopwatch.Elapsed;
                 player.GuessingTime = timeSpan.Seconds;
                 view.ShowYouWinScreen(game.Password, game.Hint, player.GuessingTries, player.LifePoints, player.GuessingTime);
+                ManageHighScores();
             }
             else
             {
@@ -164,6 +168,16 @@ namespace HangmanMotorola.controller
         private void SortHighScores()
         {
             playerScores.Sort(((score1, score2) => Int32.Parse(score1.GuessingTime).CompareTo(Int32.Parse(score2.GuessingTime))));
+        }
+        
+        private void ManageHighScores()
+        {
+            player.Name = view.GetPlayerName();
+            playerScores = fileReaderWriter.GetHighScores();
+            playerScores.Add(SetPlayerScore());
+            SortHighScores();
+            fileReaderWriter.SaveHighScores(playerScores);
+            view.ShowHighScores(playerScores);
         }
     }
 }
