@@ -83,5 +83,15 @@ namespace HangmanMotorola.view
 
             return (answer.Equals("y") || answer.Equals("Y"));
         }
+        
+        public void ShowYouWinScreen(string password, string hint, int guessingTries, int lifepoints, int seconds)
+        {
+            Console.WriteLine("\nCongratulations, You win! \nPassword was: {0} which is capital of {1}.\n" +
+                              "You completed the game in {2} tries and in {3} seconds.\n" +
+                              "You won with {4} lifepoint(s) remaining. \n" +
+                              "Please Enter your name and you might join the leaderboard!", password, hint, guessingTries, seconds, lifepoints);
+        }
+        
+        
     }
 }
