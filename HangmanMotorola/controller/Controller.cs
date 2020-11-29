@@ -37,7 +37,7 @@ namespace HangmanMotorola.controller
                 CheckAnswer();
                 CheckIfGameOver();
             }
-            //check outcome
+            CheckGameOutcome();
             CheckIfPlayAgain(view.AskIfPlayAgain());
         }
         
