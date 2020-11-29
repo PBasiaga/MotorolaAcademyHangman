@@ -7,7 +7,7 @@ namespace HangmanMotorola.model.data
     public class Game
     {
 
-        private FileReaderWriter fileReader = new FileReaderWriter();
+        private FileReaderWriter fileReader = FileReaderWriter.GetInstance();
         
         private bool isGameFinished;
         private string password;

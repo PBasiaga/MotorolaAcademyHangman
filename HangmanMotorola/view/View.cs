@@ -7,7 +7,7 @@ namespace HangmanMotorola.view
 {
     public class View
     {
-        FileReaderWriter fileReader = new FileReaderWriter();
+        FileReaderWriter fileReader = FileReaderWriter.GetInstance();
         string[] hangmanInParts;
 
         public View()

@@ -17,6 +17,19 @@ namespace HangmanMotorola.model.logic
         
         private Random random = new Random();
         
+        private FileReaderWriter() {}
+
+        private static FileReaderWriter instance;
+        
+        public static FileReaderWriter GetInstance()
+        {
+            if (instance == null)
+            {
+                instance = new FileReaderWriter();
+            }
+            return instance;
+        }
+        
         public void GetRandomPasswordAndHint(out string password, out string hint)
         {
             string[] lines = File.ReadAllLines(passwordsAndHintsFile);

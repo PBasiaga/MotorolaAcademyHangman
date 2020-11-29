@@ -22,7 +22,7 @@ namespace HangmanMotorola.controller
         {
             view = new View();
             stopwatch = new Stopwatch();
-            fileReaderWriter = new FileReaderWriter();
+            fileReaderWriter = FileReaderWriter.GetInstance();
         }
         
         public void Start()
