@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using HangmanMotorola.model.data;
@@ -11,6 +12,7 @@ namespace HangmanMotorola.controller
         private View view;
         private Player player;
         private Game game;
+        private List<PlayerScore> playerScores;
         private Stopwatch stopwatch;
 
 
@@ -144,6 +146,19 @@ namespace HangmanMotorola.controller
         {
             if (player.LifePoints <= 2)
                 view.ShowHint(game.Hint);
+        }
+        
+        private PlayerScore SetPlayerScore()
+        {
+            PlayerScore score = new PlayerScore();
+            score = new PlayerScore();
+            score.Name = player.Name;
+            score.GuessedPassword = game.Password;
+            score.GuessingTries = player.GuessingTries.ToString();
+            score.GuessingTime = player.GuessingTime.ToString();
+            score.LifePoints = player.LifePoints.ToString();
+            score.DateOfPlay = DateTime.Today.ToString("MM/dd/yyyy");
+            return score;
         }
     }
 }
