@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
+using HangmanMotorola.model.data;
 
 namespace HangmanMotorola.model.logic
 {
@@ -37,6 +39,21 @@ namespace HangmanMotorola.model.logic
             string[] hangmanInParts = allHangmanParts.Split(',');
 
             return hangmanInParts;
+        }
+        
+        public void SaveHighScores(List<PlayerScore> highScores)
+        {
+            if (highScores.Count > 10)
+            {
+                highScores.RemoveAt(10);
+            }
+            TextWriter textWriter = new StreamWriter(highscoresFile);
+            foreach (var score in highScores)
+            {
+                textWriter.WriteLine(score.Name+"|"+score.DateOfPlay+"|"+score.GuessingTime+"|"+score.GuessingTries+"|"+score.LifePoints+"|"+score.GuessedPassword);
+            }
+            textWriter.Close();
+
         }
     }
 }
